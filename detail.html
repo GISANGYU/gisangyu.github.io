@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Detail</title>
+
+    <!-- (옵션) 네가 쓰는 폰트/스타일 연결 -->
+    <link rel="stylesheet" href="css/food.css" />
+    <link rel="stylesheet" href="css/header&footer.css" />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+      /* 최소 레이아웃 (원하면 삭제하고 네 CSS만 사용) */
+      body {
+        margin: 0;
+        font-family: 'Noto Serif KR', serif;
+      }
+      .detail_wrap {
+        max-width: 1100px;
+        margin: 24px auto;
+        padding: 0 16px;
+      }
+      .detail_header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+      .back_link {
+        text-decoration: none;
+        border: 1px solid #ddd;
+        padding: 8px 12px;
+        border-radius: 8px;
+        font: 500 14px/1 'IBM Plex Mono', monospace;
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+      .gallery img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 12px;
+        display: block;
+      }
+      .meta {
+        color: #666;
+        margin: 8px 0 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="detail_wrap">
+      <div class="detail_header">
+        <h1 id="title" class="food_title">Loading…</h1>
+        <a class="back_link" href="food.html">← Back</a>
+      </div>
+
+      <div id="gallery" class="gallery"></div>
+
+      <div class="meta" id="priceRow"></div>
+      <p id="desc"></p>
+    </div>
+
+    <script>
+      $(function () {
+        const storeNames = [
+          '',
+          '본 앤 브레드',
+          '유림면',
+          '봉산옥',
+          '만족오향족발',
+          '베이스 이즈 나이스',
+          '에빠뉘',
+          '쥬에',
+          '텐지몽',
+          '숙수도가',
+          '토라후구가', //10
+          '온지음',
+          '유 유안',
+          '외고집 설렁탕',
+          '야키토리 묵',
+          '도림',
+          '주052',
+          '한월관',
+          '미필담',
+          '마나오',
+          '서교난면방', //20
+          '고사리 익스프레스',
+          '옥돌현옥',
+          '기와강',
+          '소바키리 스즈',
+          '비움',
+          '후제',
+          '두리',
+          '오일제',
+          '울트라 바이트',
+          '토오루', //30
+          '평양집',
+          '샤콘느',
+        ];
+
+        const textFoods = [
+          '',
+          '마장동 한우 숙성·구이로 유명한 소셜다이닝',
+          '서소문 3대 메밀국수, 숙성면의 부드러움',
+          '온기 가득한 국물요리로 사랑받는 한식집',
+          '온족으로 이름난 족발 전문, 담백한 풍미',
+          '자연의 풍미를 살린 모던 다이닝 감각',
+          '버터 향 풍부한 페이스트리와 디저트 인기',
+          '감각적 디저트와 음료가 돋보이는 스폿',
+          '진한 라멘과 균형 잡힌 육수로 호평받는 집',
+          '제철 재료로 담백함을 살린 정갈한 한식',
+          '복어 요리를 코스로 즐기는 깔끔한 다이닝', //10
+          '궁중 음식 전통을 현대적으로 풀어낸 한식',
+          '광둥식 다이닝, 1920년대 상하이 무드 재현',
+          '정성 담은 맑은 설렁탕, 기본에 충실한 맛',
+          '숯향 살아있는 야키토리와 사케 페어링',
+          '호텔 37층 광둥요리, 정교한 풍미와 서비스',
+          '한식 기반의 창의적 플레이트가 매력적인 곳',
+          '진한 곰탕과 한우 요리로 신뢰받는 노포',
+          '숙성·발효 조화로 깔끔한 한식 다이닝',
+          '상큼한 타이풍미, 균형 좋은 양념이 특징',
+          '난면과 중식 면요리로 가벼운 한 끼 제안', //20
+          '한식 덮밥과 반찬을 경쾌하게 풀어낸 공간',
+          '담백한 곰탕과 수육으로 알려진 한식집',
+          '전통 감성 살린 한식 코스가 인상적인 곳',
+          '정갈한 수제 소바와 섬세한 육수의 조화',
+          '차분한 공간에서 담백한 요리를 제안한다',
+          '계절 식재 중심의 모던 한식 코스 다이닝',
+          '깔끔한 집밥 상차림으로 든든한 만족감',
+          '이탈리안 감성 파스타·라자냐로 인기',
+          '개성 강한 버거·샌드위치로 사랑받는 집',
+          '일식 오마카세 스타일의 코스 다이닝', //30
+          '담백한 평양냉면과 수육으로 알려진 맛집',
+          '와인과 어울리는 유러피안 다이닝 무드',
+        ];
+
+        const foodPrices = [
+          '',
+          '₩12,000~₩22,000 · Seoul',
+          '₩8,000~₩14,000 · Seoul',
+          '₩10,000~₩16,000 · Busan',
+          '₩11,000~₩19,000 · Seoul',
+          '₩18,000~₩30,000 · Seoul',
+          '₩9,000~₩17,000 · Incheon',
+          '₩13,000~₩27,000 · Seoul',
+          '₩12,000~₩25,000 · Seoul',
+          '₩14,000~₩26,000 · Seoul',
+          '₩20,000~₩34,000 · Daegu', //10
+          '₩15,000~₩31,000 · Seoul',
+          '₩22,000~₩35,000 · Seoul',
+          '₩9,000~₩19,000 · Seoul',
+          '₩26,000~₩41,000 · Seoul',
+          '₩10,000~₩20,000 · Seoul',
+          '₩17,000~₩28,000 · Seoul',
+          '₩8,000~₩15,000 · Seoul',
+          '₩15,000~₩32,000 · Seoul',
+          '₩10,000~₩22,000 · Seoul',
+          '₩19,000~₩35,000 · Seoul', //20
+          '₩21,000~₩39,000 · Seoul',
+          '₩25,000~₩42,000 · Seoul',
+          '₩18,000~₩37,000 · Seoul',
+          '₩9,000~₩16,000 · Seoul',
+          '₩23,000~₩40,000 · Seoul',
+          '₩27,000~₩44,000 · Jeju',
+          '₩14,000~₩29,000 · Seoul',
+          '₩8,000~₩13,000 · Incheon',
+          '₩32,000~₩57,000 · Seoul',
+          '₩12,000~₩25,000 · Seoul', //30
+          '₩17,000~₩30,000 · Seoul',
+          '₩20,000~₩42,000 · Seoul',
+        ];
+        // ===== /데이터 =====
+
+        // 1) URL에서 id 읽기
+        const params = new URLSearchParams(window.location.search);
+        const id = parseInt(params.get('id'), 10);
+
+        // 3) 데이터 바인딩
+        const title = storeNames[id];
+        const desc = textFoods[id];
+        const price = foodPrices[id];
+
+        $('#title').text(title);
+        $('#desc').text(desc);
+        $('#priceRow').text(price);
+        document.title = title;
+
+        // 4) 이미지 렌더링
+        // 기본: 리스트에서 쓰던 대표 이미지
+        const fallback = `food/food (${id}).jpeg`;
+        // 추가 컷 시도: "food/food (id) (1~3).jpeg"
+        const candidates = [
+          `food/food${id} (1).jpg`,
+          `food/food${id} (2).jpg`,
+          `food/food${id} (3).jpg`,
+        ];
+
+        // 갤러리 비우고 채우기
+        const $gal = $('#gallery').empty();
+
+        // 후보 3장 시도 로드 (없으면 자동 숨김)
+        candidates.forEach((src) => {
+          const $img = $('<img>').attr('src', src).attr('alt', title);
+          $img.on('error', function () {
+            $(this).remove();
+          });
+          $gal.append($img);
+        });
+
+        // 후보가 전부 없을 수도 있으니 대표 이미지 한 장은 보장
+        const $main = $('<img>').attr('src', fallback).attr('alt', title);
+        $main.on('error', function () {
+          $(this).remove();
+        });
+        $gal.prepend($main);
+      });
+    </script>
+  </body>
+</html>
