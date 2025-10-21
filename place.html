@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Place</title>
-     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Noto+Serif+KR:wght@200..900&display=swap"
@@ -19,285 +19,334 @@
     />
     <!-- 스타일시트 -->
     <link rel="stylesheet" href="css/place.css" />
-</head>
-<body>
-      <section class="section2 section">
-        <h2>전문 포토그래퍼의 고화질사진</h2>
-        <p>기슐랭 가이드만의 프로페셔널한 사진</p>
-        <div class="flex photo_wrap">
-          <ul class="photo_list">
-            <li class="photo_item">
-              <img src="source/photo1.jpg" alt="photo1" />
-              <div class="text_wrap">
-                <h3>노들섬 불꽃축제</h3>
-                <ul class="hash_wrap">
-                  <li>#Gishlean</li>
-                  <li>#Guide</li>
-                  <li>#Professional</li>
-                </ul>
-               
-                <p  class="camera">EOS M6 Mark II 1/800 F3.5 ISO 100</p>
-                 <div class="text_box">
-                  <div class="hide_text_wrap">
-                    <p class="hide_text">노들섬은 여의도 중심 불꽃행사장과 일정 거리를 두고 고요한 강변 공간에서 낙진·미세먼지 영향을 줄인 쾌적한 관람을 제공합니다.</p>
-                  </div>
-                  <div class="hide_text_wrap">
-                    <p class="hide_text">약 3,500석 규모의 제한된 입장 좌석을 통해 보다 안전하고 여유 있는 축제 경험을 선사합니다.</p>
-                  </div>
-                  <div class="hide_text_wrap">
-                    <p class="hide_text">사전 신청을 통해 ‘서울불꽃동행섬’ 특별관람 공간으로 운영되며, 일반 관람은 제한됩니다.</p>
-                  </div>
-                      <!-- <div class="hide_text_wrap margin_top_50">
-                    <p class="hide_text">위치 : 서울시 강남구 상성대로 15-1</p>
-                  </div> -->
+    <link rel="stylesheet" href="css/header&footer.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="logo">
+        <a href="index.html"><img src="source/logo.png" />GISHLEAN GUIDE</a>
+      </h1>
 
-                  <a href="index.html" class="btn_wrap">
-                    <button class="more_btn">더보기</button>
-                  </a>  
-                  
-                  
+      <nav>
+        <ul>
+          <li><a href="info.html">Info</a></li>
+          <li><a href="food.html">Food</a></li>
+          <li class="on"><a href="#1">Place</a></li>
+          <li><a href="activity.html">Activity</a></li>
+          <li><a href="scheduler.html">Scheduler</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="visual_place">
+      <h2>기슐랭가이드 플레이스</h2>
+    </main>
+    <section class="section2 section">
+      <div class="flex photo_wrap">
+        <ul class="photo_list">
+          <li class="photo_item">
+            <img src="place/place (1).jpg" alt="photo1" />
+            <div class="text_wrap">
+              <h3 id="title">인천 개항장 거리</h3>
+              <ul class="hash_wrap">
+                <li>#ModernHistory</li>
+                <li>#OpenPortEra</li>
+                <li>#ChinatownNearby</li>
+              </ul>
+
+              <p id="desc" class="camera">중구 · Incheon</p>
+              <div class="text_box">
+                <div class="hide_text_wrap">
+                  <p class="hide_text">
+                    1883년 개항 이후의 근대 건축물들이 잘 보존된 거리입니다.
+                  </p>
                 </div>
-              </div>
-            </li>
-         <li class="photo_item">
-              <img src="source/photo2.jpg" alt="photo2" />
-              <div class="text_wrap">
-                <h3>반포 한강공원 불꽃축제</h3>
-                <ul class="hash_wrap">
-                  <li>#Gishlean</li>
-                  <li>#Guide</li>
-                  <li>#Professional</li>
-                </ul>
-                <p class="camera">EOS M6 Mark II 1/800 F3.5 ISO 100</p>
-                 <div class="text_box">
-                  <div class="hide_text_wrap">
-                    <p class="hide_text">노들섬은 여의도 중심 불꽃행사장과 일정 거리를 두고 고요한 강변 공간에서 낙진·미세먼지 영향을 줄인 쾌적한 관람을 제공합니다.</p>
-                  </div>
-                  <div class="hide_text_wrap">
-                    <p class="hide_text">약 3,500석 규모의 제한된 입장 좌석을 통해 보다 안전하고 여유 있는 축제 경험을 선사합니다.</p>
-                  </div>
-                  <div class="hide_text_wrap">
-                    <p class="hide_text">사전 신청을 통해 ‘서울불꽃동행섬’ 특별관람 공간으로 운영되며, 일반 관람은 제한됩니다.</p>
-                  </div>
-                   <!-- <div class="hide_text_wrap margin_top_50">
-                    <p class="hide_text">위치 : 서울시 강남구 상성대로 15-1</p>
-                  </div> -->
-
-                  
-                  <a href="index.html" class="btn_wrap">
-                    <button class="more_btn">더보기</button>
-                  </a>  
-                  
-              </div>
-            </li>
-             <li class="photo_item">
-              <img src="source/photo1.jpg" alt="photo1" />
-              <div class="text_wrap">
-                <h3>노들섬 불꽃축제</h3>
-                <ul class="hash_wrap">
-                  <li>#Gishlean</li>
-                  <li>#Guide</li>
-                  <li>#Professional</li>
-                </ul>
-               
-                <p  class="camera">EOS M6 Mark II 1/800 F3.5 ISO 100</p>
-                 <div class="text_box">
-                  <div class="hide_text_wrap">
-                    <p class="hide_text">노들섬은 여의도 중심 불꽃행사장과 일정 거리를 두고 고요한 강변 공간에서 낙진·미세먼지 영향을 줄인 쾌적한 관람을 제공합니다.</p>
-                  </div>
-                  <div class="hide_text_wrap">
-                    <p class="hide_text">약 3,500석 규모의 제한된 입장 좌석을 통해 보다 안전하고 여유 있는 축제 경험을 선사합니다.</p>
-                  </div>
-                  <div class="hide_text_wrap">
-                    <p class="hide_text">사전 신청을 통해 ‘서울불꽃동행섬’ 특별관람 공간으로 운영되며, 일반 관람은 제한됩니다.</p>
-                  </div>
-                      <!-- <div class="hide_text_wrap margin_top_50">
-                    <p class="hide_text">위치 : 서울시 강남구 상성대로 15-1</p>
-                  </div> -->
-
-                  <a href="index.html" class="btn_wrap">
-                    <button class="more_btn">더보기</button>
-                  </a>  
-                  
-                  
+                <div class="hide_text_wrap">
+                  <p class="hide_text">
+                    당시의 이국적인 분위기를 느끼며 시간 여행을 하는 듯한 경험을
+                    선사합니다.
+                  </p>
                 </div>
-              </div>
-            </li>
-             <li class="photo_item">
-              <img src="source/photo1.jpg" alt="photo1" />
-              <div class="text_wrap">
-                <h3>노들섬 불꽃축제</h3>
-                <ul class="hash_wrap">
-                  <li>#Gishlean</li>
-                  <li>#Guide</li>
-                  <li>#Professional</li>
-                </ul>
-               
-                <p  class="camera">EOS M6 Mark II 1/800 F3.5 ISO 100</p>
-                 <div class="text_box">
-                  <div class="hide_text_wrap">
-                    <p class="hide_text">노들섬은 여의도 중심 불꽃행사장과 일정 거리를 두고 고요한 강변 공간에서 낙진·미세먼지 영향을 줄인 쾌적한 관람을 제공합니다.</p>
-                  </div>
-                  <div class="hide_text_wrap">
-                    <p class="hide_text">약 3,500석 규모의 제한된 입장 좌석을 통해 보다 안전하고 여유 있는 축제 경험을 선사합니다.</p>
-                  </div>
-                  <div class="hide_text_wrap">
-                    <p class="hide_text">사전 신청을 통해 ‘서울불꽃동행섬’ 특별관람 공간으로 운영되며, 일반 관람은 제한됩니다.</p>
-                  </div>
-                      <!-- <div class="hide_text_wrap margin_top_50">
+                <div class="hide_text_wrap">
+                  <p class="hide_text">
+                    주변의 차이나타운, 동화마을과 함께 하루 코스로 둘러보기
+                    좋습니다.
+                  </p>
+                </div>
+                <!-- <div class="hide_text_wrap margin_top_50">
                     <p class="hide_text">위치 : 서울시 강남구 상성대로 15-1</p>
                   </div> -->
 
-                  <a href="index.html" class="btn_wrap">
-                    <button class="more_btn">더보기</button>
-                  </a>  
-                  
-                  
-                </div>
+                <a href="detail.html?id=33" class="btn_wrap">
+                  <button class="more_btn">더보기</button>
+                </a>
               </div>
-            </li>
-            <li class="photo_item">
-              <img src="source/photo1.jpg" alt="photo1" />
-              <div class="text_wrap">
-                <h3>노들섬 불꽃축제</h3>
-                <ul class="hash_wrap">
-                  <li>#Gishlean</li>
-                  <li>#Guide</li>
-                  <li>#Professional</li>
-                </ul>
-               
-                <p  class="camera">EOS M6 Mark II 1/800 F3.5 ISO 100</p>
-                 <div class="text_box">
-                  <div class="hide_text_wrap">
-                    <p class="hide_text">노들섬은 여의도 중심 불꽃행사장과 일정 거리를 두고 고요한 강변 공간에서 낙진·미세먼지 영향을 줄인 쾌적한 관람을 제공합니다.</p>
-                  </div>
-                  <div class="hide_text_wrap">
-                    <p class="hide_text">약 3,500석 규모의 제한된 입장 좌석을 통해 보다 안전하고 여유 있는 축제 경험을 선사합니다.</p>
-                  </div>
-                  <div class="hide_text_wrap">
-                    <p class="hide_text">사전 신청을 통해 ‘서울불꽃동행섬’ 특별관람 공간으로 운영되며, 일반 관람은 제한됩니다.</p>
-                  </div>
-                      <!-- <div class="hide_text_wrap margin_top_50">
-                    <p class="hide_text">위치 : 서울시 강남구 상성대로 15-1</p>
-                  </div> -->
+            </div>
+          </li>
+          <!-- 2. 달맞이길 -->
+          <li class="photo_item">
+            <img src="place/place (2).jpg" alt="photo2" />
+            <div class="text_wrap">
+              <h3>달맞이길</h3>
+              <ul class="hash_wrap">
+                <li>#DalmajiRoad</li>
+                <li>#Haeundae</li>
+                <li>#OceanView</li>
+              </ul>
+              <p class="camera">해운대구 · Busan</p>
+              <div class="text_box">
+                <div class="hide_text_wrap">
+                  <p class="hide_text">
+                    해운대와 송정 사이를 잇는 해안 드라이브 코스로, 바다와
+                    소나무 숲이 이어집니다.
+                  </p>
+                </div>
+                <div class="hide_text_wrap">
+                  <p class="hide_text">
+                    전망 좋은 카페와 산책로가 많아 일몰과 달맞이 명소로
+                    사랑받습니다.
+                  </p>
+                </div>
+                <div class="hide_text_wrap">
+                  <p class="hide_text">
+                    벚꽃철에는 길 전체가 은은한 분홍빛 터널로 변해 사진
+                    촬영지로도 유명합니다.
+                  </p>
+                </div>
+                <a href="detail.html?id=34" class="btn_wrap"
+                  ><button class="more_btn">더보기</button></a
+                >
+              </div>
+            </div>
+          </li>
 
-                  <a href="index.html" class="btn_wrap">
-                    <button class="more_btn">더보기</button>
-                  </a>  
-                  
-                  
+          <!-- 3. 정동길 (덕수궁 돌담길) -->
+          <li class="photo_item">
+            <img src="place/place3 (2).jpg" alt="photo1" />
+            <div class="text_wrap">
+              <h3>정동길 (덕수궁 돌담길)</h3>
+              <ul class="hash_wrap">
+                <li>#DeoksugungWall</li>
+                <li>#Jeongdong</li>
+                <li>#HistoricWalk</li>
+              </ul>
+              <p class="camera">중구 · Seoul</p>
+              <div class="text_box">
+                <div class="hide_text_wrap">
+                  <p class="hide_text">
+                    고풍스러운 돌담을 따라 근대 건축과 가로수길이 조화롭게
+                    이어지는 산책 코스입니다.
+                  </p>
                 </div>
+                <div class="hide_text_wrap">
+                  <p class="hide_text">
+                    덕수궁과 정동극장, 서울시립미술관 등 문화시설이 가까워 코스
+                    연계가 편리합니다.
+                  </p>
+                </div>
+                <div class="hide_text_wrap">
+                  <p class="hide_text">
+                    사계절 다른 분위기의 거리 풍경이 사진 촬영지로도 인기입니다.
+                  </p>
+                </div>
+                <a href="detail.html?id=35" class="btn_wrap"
+                  ><button class="more_btn">더보기</button></a
+                >
               </div>
-            </li>
-            <li class="photo_item">
-              <img src="source/photo1.jpg" alt="photo1" />
-              <div class="text_wrap">
-                <h3>노들섬 불꽃축제</h3>
-                <ul class="hash_wrap">
-                  <li>#Gishlean</li>
-                  <li>#Guide</li>
-                  <li>#Professional</li>
-                </ul>
-               
-                <p  class="camera">EOS M6 Mark II 1/800 F3.5 ISO 100</p>
-                 <div class="text_box">
-                  <div class="hide_text_wrap">
-                    <p class="hide_text">노들섬은 여의도 중심 불꽃행사장과 일정 거리를 두고 고요한 강변 공간에서 낙진·미세먼지 영향을 줄인 쾌적한 관람을 제공합니다.</p>
-                  </div>
-                  <div class="hide_text_wrap">
-                    <p class="hide_text">약 3,500석 규모의 제한된 입장 좌석을 통해 보다 안전하고 여유 있는 축제 경험을 선사합니다.</p>
-                  </div>
-                  <div class="hide_text_wrap">
-                    <p class="hide_text">사전 신청을 통해 ‘서울불꽃동행섬’ 특별관람 공간으로 운영되며, 일반 관람은 제한됩니다.</p>
-                  </div>
-                      <!-- <div class="hide_text_wrap margin_top_50">
-                    <p class="hide_text">위치 : 서울시 강남구 상성대로 15-1</p>
-                  </div> -->
+            </div>
+          </li>
 
-                  <a href="index.html" class="btn_wrap">
-                    <button class="more_btn">더보기</button>
-                  </a>  
-                  
-                  
+          <!-- 4. 태종대 (영도) -->
+          <li class="photo_item">
+            <img src="place/place4 (3).jpg" alt="photo1" />
+            <div class="text_wrap">
+              <h3>태종대 (영도)</h3>
+              <ul class="hash_wrap">
+                <li>#Taejongdae</li>
+                <li>#CliffView</li>
+                <li>#DanubiTrain</li>
+              </ul>
+              <p class="camera">영도구 · Busan</p>
+              <div class="text_box">
+                <div class="hide_text_wrap">
+                  <p class="hide_text">
+                    짙푸른 바다와 해식절벽이 어우러진 부산 대표 자연 경관
+                    명소입니다.
+                  </p>
                 </div>
+                <div class="hide_text_wrap">
+                  <p class="hide_text">
+                    등대 전망대와 전망 포인트가 많아 시원한 파노라마를 즐길 수
+                    있습니다.
+                  </p>
+                </div>
+                <div class="hide_text_wrap">
+                  <p class="hide_text">
+                    다누비 순환열차를 타면 주요 포인트를 편하게 둘러볼 수 있어
+                    가족 여행에 좋아요.
+                  </p>
+                </div>
+                <a href="detail.html?id=36" class="btn_wrap"
+                  ><button class="more_btn">더보기</button></a
+                >
               </div>
-            </li>
-            <li class="photo_item">
-              <img src="source/photo1.jpg" alt="photo1" />
-              <div class="text_wrap">
-                <h3>노들섬 불꽃축제</h3>
-                <ul class="hash_wrap">
-                  <li>#Gishlean</li>
-                  <li>#Guide</li>
-                  <li>#Professional</li>
-                </ul>
-               
-                <p  class="camera">EOS M6 Mark II 1/800 F3.5 ISO 100</p>
-                 <div class="text_box">
-                  <div class="hide_text_wrap">
-                    <p class="hide_text">노들섬은 여의도 중심 불꽃행사장과 일정 거리를 두고 고요한 강변 공간에서 낙진·미세먼지 영향을 줄인 쾌적한 관람을 제공합니다.</p>
-                  </div>
-                  <div class="hide_text_wrap">
-                    <p class="hide_text">약 3,500석 규모의 제한된 입장 좌석을 통해 보다 안전하고 여유 있는 축제 경험을 선사합니다.</p>
-                  </div>
-                  <div class="hide_text_wrap">
-                    <p class="hide_text">사전 신청을 통해 ‘서울불꽃동행섬’ 특별관람 공간으로 운영되며, 일반 관람은 제한됩니다.</p>
-                  </div>
-                      <!-- <div class="hide_text_wrap margin_top_50">
-                    <p class="hide_text">위치 : 서울시 강남구 상성대로 15-1</p>
-                  </div> -->
+            </div>
+          </li>
 
-                  <a href="index.html" class="btn_wrap">
-                    <button class="more_btn">더보기</button>
-                  </a>  
-                  
-                  
+          <!-- 5. 경의선 숲길 (연트럴파크) -->
+          <li class="photo_item">
+            <img src="place/place5 (2).jpg" alt="photo1" />
+            <div class="text_wrap">
+              <h3>경의선 숲길 (연트럴파크)</h3>
+              <ul class="hash_wrap">
+                <li>#YeontralPark</li>
+                <li>#GyeonguiLineForest</li>
+                <li>#CafeStreet</li>
+              </ul>
+              <p class="camera">마포구 · Seoul</p>
+              <div class="text_box">
+                <div class="hide_text_wrap">
+                  <p class="hide_text">
+                    철길이 공원으로 재탄생한 보행 친화형 녹지로, 산책과 자전거
+                    코스가 잘 정비되어 있습니다.
+                  </p>
                 </div>
+                <div class="hide_text_wrap">
+                  <p class="hide_text">
+                    연남동 카페·베이커리와 이어져 브런치, 피크닉 명소로
+                    사랑받습니다.
+                  </p>
+                </div>
+                <div class="hide_text_wrap">
+                  <p class="hide_text">
+                    주말마다 플리마켓과 팝업이 열려 활기찬 로컬 분위기를 느낄 수
+                    있어요.
+                  </p>
+                </div>
+                <a href="detail.html?id=37" class="btn_wrap"
+                  ><button class="more_btn">더보기</button></a
+                >
               </div>
-            </li>
-            <li class="photo_item">
-              <img src="source/photo1.jpg" alt="photo1" />
-              <div class="text_wrap">
-                <h3>노들섬 불꽃축제</h3>
-                <ul class="hash_wrap">
-                  <li>#Gishlean</li>
-                  <li>#Guide</li>
-                  <li>#Professional</li>
-                </ul>
-               
-                <p  class="camera">EOS M6 Mark II 1/800 F3.5 ISO 100</p>
-                 <div class="text_box">
-                  <div class="hide_text_wrap">
-                    <p class="hide_text">노들섬은 여의도 중심 불꽃행사장과 일정 거리를 두고 고요한 강변 공간에서 낙진·미세먼지 영향을 줄인 쾌적한 관람을 제공합니다.</p>
-                  </div>
-                  <div class="hide_text_wrap">
-                    <p class="hide_text">약 3,500석 규모의 제한된 입장 좌석을 통해 보다 안전하고 여유 있는 축제 경험을 선사합니다.</p>
-                  </div>
-                  <div class="hide_text_wrap">
-                    <p class="hide_text">사전 신청을 통해 ‘서울불꽃동행섬’ 특별관람 공간으로 운영되며, 일반 관람은 제한됩니다.</p>
-                  </div>
-                      <!-- <div class="hide_text_wrap margin_top_50">
-                    <p class="hide_text">위치 : 서울시 강남구 상성대로 15-1</p>
-                  </div> -->
+            </div>
+          </li>
 
-                  <a href="index.html" class="btn_wrap">
-                    <button class="more_btn">더보기</button>
-                  </a>  
-                  
-                  
+          <!-- 6. 창덕궁 후원 (비원) -->
+          <li class="photo_item">
+            <img src="place/place6 (2).jpg" alt="photo1" />
+            <div class="text_wrap">
+              <h3>창덕궁 후원 (비원)</h3>
+              <ul class="hash_wrap">
+                <li>#SecretGarden</li>
+                <li>#Changdeokgung</li>
+                <li>#UNESCO</li>
+              </ul>
+              <p class="camera">종로구 · Seoul</p>
+              <div class="text_box">
+                <div class="hide_text_wrap">
+                  <p class="hide_text">
+                    왕실의 정원으로 조성된 후원은 연못과 정자, 숲길이 어우러진
+                    고요한 공간입니다.
+                  </p>
                 </div>
+                <div class="hide_text_wrap">
+                  <p class="hide_text">
+                    자연 지형을 살린 배치 덕분에 사계절 다른 풍경을 감상할 수
+                    있습니다.
+                  </p>
+                </div>
+                <div class="hide_text_wrap">
+                  <p class="hide_text">
+                    참관은 시간제·예약제로 운영되어 비교적 한적하게 관람할 수
+                    있어요.
+                  </p>
+                </div>
+                <a href="detail.html?id=38" class="btn_wrap"
+                  ><button class="more_btn">더보기</button></a
+                >
               </div>
-            </li>
-          </ul>
-            
-        </div>
-      </section>
-</body>
-<script>
-  // 주석처리
-</script>
-<style>
-  /* 주석처리 */
-</style>
-<!-- 주석처리 -->
+            </div>
+          </li>
+
+          <!-- 7. 낙산공원 (야경 명소) -->
+          <li class="photo_item">
+            <img src="place/place7 (2).jpg" alt="photo1" />
+            <div class="text_wrap">
+              <h3>낙산공원 (야경 명소)</h3>
+              <ul class="hash_wrap">
+                <li>#NaksanPark</li>
+                <li>#SeoulCityWall</li>
+                <li>#NightView</li>
+              </ul>
+              <p class="camera">종로구 · Seoul</p>
+              <div class="text_box">
+                <div class="hide_text_wrap">
+                  <p class="hide_text">
+                    서울성곽을 따라 이어지는 산책로에서 대학로와 도심의 야경을
+                    한눈에 담습니다.
+                  </p>
+                </div>
+                <div class="hide_text_wrap">
+                  <p class="hide_text">
+                    해 질 녘부터 밤까지 분위기가 달라져 사진 촬영지로 특히
+                    인기입니다.
+                  </p>
+                </div>
+                <div class="hide_text_wrap">
+                  <p class="hide_text">
+                    가볍게 오를 수 있는 완만한 코스라 데이트 코스로도 추천해요.
+                  </p>
+                </div>
+                <a href="detail.html?id=39" class="btn_wrap"
+                  ><button class="more_btn">더보기</button></a
+                >
+              </div>
+            </div>
+          </li>
+
+          <!-- 8. 흰여울 문화마을 -->
+          <li class="photo_item">
+            <img src="place/place08.jpg" alt="photo1" />
+            <div class="text_wrap">
+              <h3>흰여울 문화마을</h3>
+              <ul class="hash_wrap">
+                <li>#Huinnyeoul</li>
+                <li>#Yeongdo</li>
+                <li>#SeaAlley</li>
+              </ul>
+              <p class="camera">영도구 · Busan</p>
+              <div class="text_box">
+                <div class="hide_text_wrap">
+                  <p class="hide_text">
+                    바다 절벽을 따라 이어지는 골목과 하얀 집들이 그림 같은
+                    풍경을 만듭니다.
+                  </p>
+                </div>
+                <div class="hide_text_wrap">
+                  <p class="hide_text">
+                    전망 좋은 카페와 소규모 갤러리, 포토 스폿이 많아 산책하기
+                    좋아요.
+                  </p>
+                </div>
+                <div class="hide_text_wrap">
+                  <p class="hide_text">
+                    바닷길 계단을 따라 내려가면 파도 소리와 함께 탁 트인
+                    오션뷰를 즐길 수 있습니다.
+                  </p>
+                </div>
+                <a href="detail.html?id=40" class="btn_wrap"
+                  ><button class="more_btn">더보기</button></a
+                >
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <footer>
+      <p>© 2025 GISHLEANG GUIDE</p>
+      <p>Taste Korea · Feel Culture · Make Your Own Journey</p>
+      <p>경기도 의왕시 계원대학로 66, 기슐랭 가이드 스튜디오</p>
+    </footer>
+  </body>
 </html>

@@ -126,4 +126,15 @@ $(document).ready(function () {
           `;
     $('.food_wrap').append(li);
   }
+  $(window).on('scroll', function () {
+    var scrollTop = $(window).scrollTop() / 350;
+    // console.log(scrollTop);
+    if (scrollTop > 0) {
+      $('#visual_place').css({ filter: `grayscale(${1 - scrollTop})` });
+      $('#visual_food').css({ filter: `grayscale(${1 - scrollTop})` });
+      $('#visual_activity').css({ filter: `grayscale(${1 - scrollTop})` });
+
+      // $('#visual_place').css({ display: 'none' });
+    }
+  });
 });
