@@ -1,0 +1,151 @@
+#visual_scheduler {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  /* margin-top: 100px; */
+  width: 100%;
+  height: 60vh;
+  background-image: url(/source/visual_scheduler.jpg);
+  background-attachment: fixed;
+  filter: grayscale(1);
+}
+
+#visual_scheduler h2 {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 50px;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 42px;
+}
+:root {
+  --accent: #e63946; /* 포인트 레드 */
+  --ink: #222;
+  --sub: #666;
+  --line: #eee;
+  --bg: #fafafa;
+}
+body {
+  margin: 0;
+  font-family: 'Noto Serif KR', serif;
+  /* background: var(--bg);
+  color: var(--ink); */
+}
+.wrap {
+  max-width: 980px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+.meta {
+  color: var(--sub);
+  margin: 0 0 24px;
+}
+.legend {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 8px 0 16px;
+}
+.tag {
+  font: 600 12px/1.8 system-ui, sans-serif;
+  border: 1px solid var(--line);
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #fff;
+}
+.tag.food {
+  border-color: #ffd5d5;
+  background: #fff1f1;
+  color: #b00;
+}
+.tag.place {
+  border-color: #d9e7ff;
+  background: #eef5ff;
+  color: #0b5bd3;
+}
+.tag.activity {
+  border-color: #d9ffe6;
+  background: #effff6;
+  color: #1a7f43;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+}
+thead th {
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  font-weight: 700;
+  color: #111;
+}
+th,
+td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+}
+thead th {
+  border-bottom: 2px solid var(--line);
+}
+tbody tr:nth-child(odd) td {
+  background: #fff;
+}
+tbody tr:nth-child(even) td {
+  background: #fcfcfc;
+}
+
+.col-time {
+  width: 120px;
+  white-space: nowrap;
+  font-weight: 600;
+  color: #111;
+  border-right: 1px solid var(--line);
+  background: #fff;
+}
+
+.pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font: 600 12px/1 system-ui, sans-serif;
+  margin-right: 6px;
+}
+.pill.food {
+  background: #ffeaea;
+  color: #b10000;
+}
+.pill.place {
+  background: #eaf2ff;
+  color: #0a4ec3;
+}
+.pill.activity {
+  background: #eafff0;
+  color: #0c7a3e;
+}
+
+/* td[rowspan] {
+      border-left: 4px solid var(--accent);
+    } */
+
+section {
+  display: flex;
+  padding-top: 50px;
+  border-top: 1px solid black;
+}

@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>shceduler</title>
     <link rel="stylesheet" href="css/header&footer.css" />
+    <link rel="stylesheet" href="css/scheduler.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
   </head>
+
   <body>
     <header>
       <h1 class="logo">
-        <a href="index.html"><img src="source/logo.png" />GISHLEAN GUIDE</a>
+        <a href="index.html">
+          <!-- <img src="source/logo.png" /> -->
+          GISHLEAN GUIDE</a
+        >
       </h1>
 
       <nav>
@@ -22,5 +29,285 @@
         </ul>
       </nav>
     </header>
+    <main id="visual_scheduler">
+      <h2>기슐랭가이드 스케줄러</h2>
+    </main>
+    <section>
+      <div class="wrap">
+        <h1>푸르른 자연과 함께, 자연 위주 동선 가이드</h1>
+        <p class="meta">효율을 생각한 황금 동선 가이드</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th class="col-time">시간</th>
+              <th>일정</th>
+              <th>장소 / 메모</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-time">09:00</td>
+              <td>
+                <a href="detail.html?id=37">
+                  <span class="pill place">Place</span>
+                  경의선 숲길 산책
+                </a>
+              </td>
+              <td>마포구 연남동 · 아침 산책 및 커피 한 잔</td>
+            </tr>
+
+            <tr>
+              <td class="col-time">10:00</td>
+              <td>
+                <a href="detail.html?id=6">
+                  <span class="pill food">Food</span>
+                  브런치 — 에빠뉘
+                </a>
+              </td>
+              <td>인천 · 버터 향 좋은 크루아상</td>
+            </tr>
+
+            <tr>
+              <td class="col-time">11:00</td>
+              <td rowspan="2">
+                <a href="detail.html?id=38">
+                  <span class="pill place">Place</span>
+                  창덕궁 후원 투어
+                </a>
+              </td>
+              <td rowspan="2">종로 · 왕실 정원 숲길 산책 (예약 필요)</td>
+            </tr>
+            <tr>
+              <td class="col-time">12:00</td>
+            </tr>
+
+            <tr>
+              <td class="col-time">13:00</td>
+              <td>
+                <a href="detail.html?id=13">
+                  <span class="pill food">Food</span>
+                  점심 — 외고집 설렁탕
+                </a>
+              </td>
+              <td>종로/을지로 · 맑고 깊은 국물의 설렁탕 한 그릇</td>
+            </tr>
+
+            <tr>
+              <td class="col-time">14:00</td>
+              <td rowspan="2">
+                <a href="detail.html?id=35">
+                  <span class="pill place">Place</span>
+                  정동길 & 덕수궁 돌담길 산책
+                </a>
+              </td>
+              <td rowspan="2">중구 · 고풍스러운 근대 건축물 구경</td>
+            </tr>
+            <tr>
+              <td class="col-time">15:00</td>
+            </tr>
+
+            <tr>
+              <td class="col-time">16:00</td>
+              <td>
+                <a href="detail.html?id=32">
+                  <span class="pill food">Food</span>
+                  카페 휴식 & 디저트 (샤콘느)
+                </a>
+              </td>
+              <td>강남/신사 · 와인에 어울리는 유러피안 디저트</td>
+            </tr>
+
+            <tr>
+              <td class="col-time">17:00</td>
+              <td rowspan="2">
+                <a href="detail.html?id=41">
+                  <span class="pill activity">Activity</span>
+                  한강 카약 & 야경 즐기기
+                </a>
+              </td>
+              <td rowspan="2">뚝섬 한강공원 · 물 위에서 일몰 구경</td>
+            </tr>
+            <tr>
+              <td class="col-time">18:00</td>
+            </tr>
+
+            <tr>
+              <td class="col-time">19:00</td>
+              <td>
+                <a href="detail.html?id=14">
+                  <span class="pill food">Food</span>
+                  저녁 식사 — 야키토리 묵
+                </a>
+              </td>
+              <td>용산 · 숯불 향 좋은 닭 꼬치와 사케</td>
+            </tr>
+
+            <tr>
+              <td class="col-time">20:00</td>
+              <td>
+                <a href="#">
+                  <span class="pill activity">Activity</span>
+                  하루 정리 및 파일 정리
+                </a>
+              </td>
+              <td>숙소/호텔 · 사진 백업 및 충전</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="wrap">
+        <h1>기슐랭 맛집 탐방 · 미식가를 위한 5끼 동선 가이드</h1>
+        <p class="meta">미식가들을 위한 대식 가이드</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th class="col-time">시간</th>
+              <th>일정</th>
+              <th>장소 / 메모</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-time">09:00</td>
+              <td>
+                <a href="detail.html?id=17">
+                  <span class="pill food">Food</span>
+                  1끼: 아침 식사 — 한월관
+                </a>
+              </td>
+              <td>마포구 · 진한 곰탕으로 든든하게</td>
+            </tr>
+
+            <tr>
+              <td class="col-time">10:00</td>
+              <td>
+                <a href="detail.html?id=37">
+                  <span class="pill place">Place</span>
+                  경의선 숲길 산책
+                </a>
+              </td>
+              <td>마포구 연남동 · 식후 소화 및 로컬 분위기 느끼기</td>
+            </tr>
+
+            <tr>
+              <td class="col-time">11:00</td>
+              <td>
+                <a href="detail.html?id=13">
+                  <span class="pill food">Food</span>
+                  2끼: 이른 점심 — 외고집 설렁탕
+                </a>
+              </td>
+              <td>종로 · 맑고 깊은 국물의 설렁탕</td>
+            </tr>
+
+            <tr>
+              <td class="col-time">12:00</td>
+              <td>
+                <a href="detail.html?id=38">
+                  <span class="pill place">Place</span>
+                  창덕궁 후원 투어
+                </a>
+              </td>
+              <td>종로 · 왕실 정원 숲길 산책 (예약 필요)</td>
+            </tr>
+
+            <tr>
+              <td class="col-time">13:00</td>
+              <td>
+                <a href="detail.html?id=44">
+                  <span class="pill activity">Activity</span>
+                  제주 9.81파크 카트 레이싱
+                </a>
+              </td>
+              <td>여의도/영등포 · 활발한 활동으로 칼로리 소모</td>
+            </tr>
+
+            <tr>
+              <td class="col-time">14:00</td>
+              <td>
+                <a href="detail.html?id=4">
+                  <span class="pill food">Food</span>
+                  3끼: 늦은 점심 — 만족오향족발
+                </a>
+              </td>
+              <td>시청/광화문 · 담백한 족발과 시원한 무김치</td>
+            </tr>
+
+            <tr>
+              <td class="col-time">15:00</td>
+              <td>
+                <a href="detail.html?id=35">
+                  <span class="pill place">Place</span>
+                  정동길 & 덕수궁 돌담길 산책
+                </a>
+              </td>
+              <td>중구 · 고풍스러운 근대 건축물 구경</td>
+            </tr>
+
+            <tr>
+              <td class="col-time">16:00</td>
+              <td>
+                <a href="detail.html?id=7">
+                  <span class="pill food">Food</span>
+                  4끼: 디저트 — 쥬에
+                </a>
+              </td>
+              <td>강남/신사 · 감각적인 하이엔드 디저트</td>
+            </tr>
+
+            <tr>
+              <td class="col-time">17:00</td>
+              <td>
+                <a href="detail.html?id=32">
+                  <span class="pill food">Food</span>
+                  카페 & 휴식 (샤콘느)
+                </a>
+              </td>
+              <td>강남/신사 · 와인에 어울리는 유러피안 디저트</td>
+            </tr>
+
+            <tr>
+              <td class="col-time">18:00</td>
+              <td>
+                <a href="detail.html?id=41">
+                  <span class="pill activity">Activity</span>
+                  한강 카약 & 야경 즐기기
+                </a>
+              </td>
+              <td>뚝섬 한강공원 · 물 위에서 일몰 구경</td>
+            </tr>
+
+            <tr>
+              <td class="col-time">19:00</td>
+              <td>
+                <a href="detail.html?id=14">
+                  <span class="pill food">Food</span>
+                  5끼: 저녁 식사 — 야키토리 묵
+                </a>
+              </td>
+              <td>용산 · 숯불 향 좋은 닭 꼬치와 사케</td>
+            </tr>
+
+            <tr>
+              <td class="col-time">20:00</td>
+              <td>
+                <a href="#">
+                  <span class="pill activity">Activity</span>
+                  하루 정리 및 파일 정리
+                </a>
+              </td>
+              <td>숙소/호텔 · 사진 백업 및 충전</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <footer>
+      <p>© 2025 GISHLEANG GUIDE</p>
+      <p>Taste Korea · Feel Culture · Make Your Own Journey</p>
+      <p>경기도 의왕시 계원대학로 66, 기슐랭 가이드 스튜디오</p>
+    </footer>
   </body>
 </html>

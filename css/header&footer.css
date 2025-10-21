@@ -60,6 +60,7 @@ header .logo {
   display: flex;
   align-items: center;
   line-height: 80px;
+  transform: translateY(-3px);
 }
 .logo a {
   display: flex;

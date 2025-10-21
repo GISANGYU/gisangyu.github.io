@@ -344,7 +344,7 @@ a {
 }
 
 .content_left {
-  padding-top: 20px;
+  padding-top: 0px;
   padding-left: 20px;
   position: relative;
 }
@@ -360,14 +360,14 @@ a {
 }
 
 .content_left p:nth-of-type(2) {
-  font-size: 18px;
+  font-size: 0px;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .content_left p:nth-of-type(3) {
   font-size: 14px;
-  line-height: 20px;
+  line-height: 24px;
   margin-top: 20px;
 }
 
@@ -391,4 +391,7 @@ a {
 }
 .button:hover {
   background-color: black;
+}
+footer {
+  margin-top: 0px;
 }
