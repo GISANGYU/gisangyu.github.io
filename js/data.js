@@ -346,33 +346,82 @@ $(function () {
   $('#content_text').text(guideTexts[id]);
   document.title = storeNames[id];
 
-  let topSrcs = [];
+  // 탑 미디어 렌더링 -------------------------------------------------
+  const $top = $('#galleryTop').empty();
 
+  // 네비 탭 on/off
+  $('.header_list li').removeClass('on');
   if (id >= 1 && id <= 32) {
-    // id 1~32: food 폴더
-    topSrcs = [1, 2, 3].map((n) => `food/food${id} (${n}).jpg`);
-    $('.header_list li').removeClass('.on');
     $('.header_list li:nth-of-type(2)').addClass('on');
   } else if (id >= 33 && id <= 40) {
-    // id 33~40: place 폴더
-    topSrcs = [1, 2, 3].map((n) => `place/place${id - 32} (${n}).jpg`);
-    $('.header_list li').removeClass('.on');
     $('.header_list li:nth-of-type(3)').addClass('on');
   } else if (id >= 41 && id <= 45) {
-    // id 41~45: activity 폴더
-    topSrcs = [1, 2, 3].map((n) => `activity/activity${id - 40} (${n}).jpg`);
-    $('.header_list li').removeClass('.on');
     $('.header_list li:nth-of-type(4)').addClass('on');
+    //   $('main').css({
+    //     transform: 'translateY(-540px)',
+    //     backgroundColor: 'white',
+    //     paddingTop: '100px',
+    //   });
+    //   $('footer').css({
+    //     transform: 'translateY(-540px)',
+    //   });
+    //   $('body').css({
+    //     overflowX: 'hidden',
+    //   });
+    //
   }
-  const $top = $('#galleryTop').empty();
-  $.each(topSrcs, (i, src) => {
-    $('<img>', { src, alt: storeNames[id] })
-      .on('error', function () {
-        $(this).remove();
-      })
-      .appendTo($top);
-  });
 
+  if (id >= 1 && id <= 32) {
+    // id 1~32: food 폴더 이미지 3장
+    const imgs = [1, 2, 3].map((n) => `food/food${id} (${n}).jpg`);
+    imgs.forEach((src) => {
+      $('<img>', { src, alt: storeNames[id] })
+        .on('error', function () {
+          $(this).remove();
+        })
+        .appendTo($top);
+    });
+  } else if (id >= 33 && id <= 40) {
+    // id 33~40: place 폴더 이미지 3장
+    const placeIdx = id - 32; // place1~8
+    const imgs = [1, 2, 3].map((n) => `place/place${placeIdx} (${n}).jpg`);
+    imgs.forEach((src) => {
+      $('<img>', { src, alt: storeNames[id] })
+        .on('error', function () {
+          $(this).remove();
+        })
+        .appendTo($top);
+    });
+  } else if (id >= 41 && id <= 45) {
+    // id 41~45: activity → 비디오 1개 (source/jeju1~5.mp4)
+    const videoIdx = id - 40; // 41→1, 45→5
+    const videoSrc = `source/jeju${videoIdx}.mp4`;
+
+    const $video = $(`  
+      <video
+        class="top-video"
+       autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+              disablepictureinpicture
+              disableremoteplayback
+              controlsList="nodownload noplaybackrate nofullscreen"
+        
+      >
+        <source src="${videoSrc}" type="video/mp4">
+        해당 브라우저에서 동영상을 재생할 수 없습니다.
+      </video>
+    `);
+
+    // 로드 실패 시 대체 텍스트
+    $video.on('error', function () {
+      $top.append($('<p>').text('동영상을 불러오지 못했습니다.'));
+    });
+
+    $top.append($video);
+  }
   // ------------------------------------------
   // 카카오맵 동적 로드 로직 추가
   if (id > 0 && id < mapData.length) {
